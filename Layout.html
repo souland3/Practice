@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Estructuras/Layouts</title>
+</head>
+<style>
+	/* Aquí va el código CSS */
+    body{
+        background-color: aqua;
+    }
+    header,section,footer{
+        height: 200px;
+    }
+    nav{
+        position:absolute;
+        width: 20%;
+        height: 600px;
+        background-color: rgb(255, 190, 25);
+    }
+    .column{
+        width: 78%;
+        margin-left: 22%;
+    }
+    header{
+        background-color: rgb(255, 135, 37);
+    }
+    section{
+        background-color: rgb(120, 75, 172);
+    }
+    footer{
+        position:fixed;
+        background-color: rgb(207, 62, 164);
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <nav>
+            <h1>Nav</h1>
+        </nav>
+        
+        <section class="column">
+            <header>
+                <h1>Header</h1>
+            </header>
+            <section>
+                <h1>Section 1</h1>
+            </section>
+            <section>
+                <h1>Section 2</h1>
+            </section>
+        </section>
+        
+    </div>
+    
+    <footer>
+        <h1>footer</h1>
+    </footer>
+    
+</body>
