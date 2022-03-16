@@ -3,39 +3,106 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Estructuras/Layouts</title>
+    <meta name="viewport" content="width=device-width">
+	<title>Estructura con Inline Block</title>
 </head>
 <style>
 	/* Aquí va el código CSS */
     body{
         background-color: aqua;
     }
-    header,section,footer{
-        height: 200px;
-    }
+
     nav{
-        position:absolute;
-        width: 20%;
-        height: 600px;
         background-color: rgb(255, 190, 25);
+        height: 100px;
+        margin-bottom: 16px;
     }
     .column{
-        width: 78%;
-        margin-left: 22%;
+        margin-bottom: 16px;
+    }
+    .column section{
+        background-color: rgb(120, 75, 172);
+        height: 100px;
     }
     header{
         background-color: rgb(255, 135, 37);
+        height: 100px;
+        margin-bottom: 16px;
     }
     section{
-        background-color: rgb(120, 75, 172);
+        margin-bottom: 16px;
     }
+
+
     footer{
-        position:fixed;
         background-color: rgb(207, 62, 164);
-        bottom: 0;
-        left: 0;
-        width: 100%;
+        height: 100px;
     }
+
+       /* Ver. Tablet */
+
+    @media (min-width: 720px)  {
+        /*Aqui inician las reglas para tablet*/
+        header,section,footer{
+            height: 200px;
+        }
+        nav{
+            display: inline-block;
+            width: 20%;
+            height: 600px;
+            vertical-align: top;
+        }
+        .column{
+            width: 77%;
+            display: inline-block;
+            margin-left: 2%;
+            height: auto;
+            vertical-align: top;
+        }
+        header{
+            display: inline-block;
+            width: 100%;
+        }   
+        section{
+            display: inline-block;
+            width: 100%;
+        }
+        .column section{
+            height: 200px;
+        }
+        /*Aqui terminan las reglas para tablet*/
+    }
+
+         /* Ver. laptop */
+
+         @media (min-width: 1024px)  {
+        /*Aqui inician las reglas para laptop*/
+        header{
+           background-color: rgb(255, 179, 15);
+       }
+       nav{
+           background-color: rgb(177, 25, 207);
+       }
+        .column section{
+             background-color: blue;
+        }
+        /*Aqui terminan las reglas para laptop*/
+      }
+
+      /* Ver. desktop */
+      @media (min-width: 1400px)  {
+        /*Aqui inician las reglas para desktop*/
+        header{
+           background-color: rgb(255, 179, 15);
+       }
+       nav{
+           background-color: rgb(177, 25, 207);
+       }
+       .column section:last-child{
+           background-color: crimson;
+       }
+        /*Aqui terminan las reglas para desktop*/
+      }
 </style>
 
 <body>
