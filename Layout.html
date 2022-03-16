@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-	<title>Estructuras/Layouts Float</title>
+	<title>Estructura con Inline Block</title>
 </head>
 <style>
 	/* Aquí va el código CSS */
@@ -32,13 +32,7 @@
     section{
         margin-bottom: 16px;
     }
-    .clearfix:after{
-        content: " ";
-        visibility: hidden;
-        display: block;
-        height: 0;
-        clear: both;
-    }
+
 
     footer{
         background-color: rgb(207, 62, 164);
@@ -53,22 +47,24 @@
             height: 200px;
         }
         nav{
-            float: left;
+            display: inline-block;
             width: 20%;
             height: 600px;
+            vertical-align: top;
         }
         .column{
-            width: 78%;
-            float: left;
+            width: 77%;
+            display: inline-block;
             margin-left: 2%;
             height: auto;
+            vertical-align: top;
         }
         header{
-            float: left;
+            display: inline-block;
             width: 100%;
         }   
         section{
-            float: left;
+            display: inline-block;
             width: 100%;
         }
         .column section{
@@ -104,14 +100,13 @@
        }
        .column section:last-child{
            background-color: crimson;
-           height: 100px;
        }
         /*Aqui terminan las reglas para desktop*/
       }
 </style>
 
 <body>
-    <div class="container clearfix">
+    <div class="container">
         <nav>
             <h1>Nav</h1>
         </nav>
