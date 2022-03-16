@@ -3,43 +3,115 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Estructuras/Layouts</title>
+    <meta name="viewport" content="width=device-width">
+	<title>Estructuras/Layouts Float</title>
 </head>
 <style>
 	/* Aquí va el código CSS */
     body{
         background-color: aqua;
     }
-    header,section,footer{
-        height: 200px;
-    }
+
     nav{
-        position:absolute;
-        width: 20%;
-        height: 600px;
         background-color: rgb(255, 190, 25);
+        height: 100px;
+        margin-bottom: 16px;
     }
     .column{
-        width: 78%;
-        margin-left: 22%;
+        margin-bottom: 16px;
+    }
+    .column section{
+        background-color: rgb(120, 75, 172);
+        height: 100px;
     }
     header{
         background-color: rgb(255, 135, 37);
+        height: 100px;
+        margin-bottom: 16px;
     }
     section{
-        background-color: rgb(120, 75, 172);
+        margin-bottom: 16px;
     }
+    .clearfix:after{
+        content: " ";
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
     footer{
-        position:fixed;
         background-color: rgb(207, 62, 164);
-        bottom: 0;
-        left: 0;
-        width: 100%;
+        height: 100px;
     }
+
+       /* Ver. Tablet */
+
+    @media (min-width: 720px)  {
+        /*Aqui inician las reglas para tablet*/
+        header,section,footer{
+            height: 200px;
+        }
+        nav{
+            float: left;
+            width: 20%;
+            height: 600px;
+        }
+        .column{
+            width: 78%;
+            float: left;
+            margin-left: 2%;
+            height: auto;
+        }
+        header{
+            float: left;
+            width: 100%;
+        }   
+        section{
+            float: left;
+            width: 100%;
+        }
+        .column section{
+            height: 200px;
+        }
+        /*Aqui terminan las reglas para tablet*/
+    }
+
+         /* Ver. laptop */
+
+         @media (min-width: 1024px)  {
+        /*Aqui inician las reglas para laptop*/
+        header{
+           background-color: rgb(255, 179, 15);
+       }
+       nav{
+           background-color: rgb(177, 25, 207);
+       }
+        .column section{
+             background-color: blue;
+        }
+        /*Aqui terminan las reglas para laptop*/
+      }
+
+      /* Ver. desktop */
+      @media (min-width: 1400px)  {
+        /*Aqui inician las reglas para desktop*/
+        header{
+           background-color: rgb(255, 179, 15);
+       }
+       nav{
+           background-color: rgb(177, 25, 207);
+       }
+       .column section:last-child{
+           background-color: crimson;
+           height: 100px;
+       }
+        /*Aqui terminan las reglas para desktop*/
+      }
 </style>
 
 <body>
-    <div class="container">
+    <div class="container clearfix">
         <nav>
             <h1>Nav</h1>
         </nav>
