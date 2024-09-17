@@ -3,39 +3,156 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Estructuras/Layouts</title>
+    <meta name="viewport" content="width=device-width">
+	<title>Estructura con Flexbox</title>
 </head>
 <style>
 	/* Aquí va el código CSS */
     body{
         background-color: aqua;
     }
-    header,section,footer{
-        height: 200px;
-    }
+
     nav{
-        position:absolute;
-        width: 20%;
-        height: 600px;
         background-color: rgb(255, 190, 25);
+        height: 100px;
+        margin-bottom: 16px;
     }
     .column{
-        width: 78%;
-        margin-left: 22%;
+        margin-bottom: 16px;
+    }
+    .column section{
+        background-color: rgb(120, 75, 172);
+        height: 100px;
     }
     header{
         background-color: rgb(255, 135, 37);
+        height: 100px;
+        margin-bottom: 16px;
     }
     section{
-        background-color: rgb(120, 75, 172);
+        margin-bottom: 16px;
     }
+
+
     footer{
-        position:fixed;
         background-color: rgb(207, 62, 164);
-        bottom: 0;
-        left: 0;
-        width: 100%;
+        height: 100px;
     }
+
+       /* Ver. Tablet */
+
+    @media (min-width: 720px)  {
+        /*Aqui inician las reglas para tablet*/
+
+        .container{
+            display: flex;
+        }
+
+        .column{
+            display: flex;
+        }
+
+        header,section{
+            height: 600px;
+        }
+        nav{
+            width: 20%;
+            height: 600px;
+            vertical-align: top;
+        }
+        .column{
+            width: 77%;
+            margin-left: 2%;
+            height: auto;
+            vertical-align: top;
+        }
+        header{
+            width: 100%;
+        }   
+        section{
+            width: 100%;
+        }
+        .column section{
+            height: 600px;
+        }
+        footer{
+            height: 200px;
+        }
+        /*Aqui terminan las reglas para tablet*/
+    }
+
+         /* Ver. laptop */
+
+         @media (min-width: 1024px)  {
+        /*Aqui inician las reglas para laptop*/
+        header{
+           background-color: rgb(255, 179, 15);    
+           height: 200px;  
+       }
+       .container{
+           align-items: center;
+           flex-direction: row-reverse;
+        }
+       
+       nav{
+           background-color: rgb(177, 25, 207);
+           align-items: center;
+       }
+       
+        .column section{
+            background-color: rgb(51, 255, 0);
+            height: 200px;
+            gap: 20px;
+            flex-direction: row;
+         }
+         .column {
+             flex-direction: column;
+             margin-right: 16px;
+         }
+
+        /*Aqui terminan las reglas para laptop*/
+      }
+
+      /* Ver. desktop */
+      @media (min-width: 1400px)  {
+        /*Aqui inician las reglas para desktop*/
+
+        .column{
+            width: 100%;
+            margin-right: 16px;
+            margin-top: 16px;
+            flex-direction: row
+        }
+
+        header{
+           background-color: rgb(255, 179, 15);
+           width: 50%;
+           flex-direction: row-reverse;
+           height: 600px;
+       }
+
+       nav{
+           background-color: rgb(177, 25, 207);
+           order: 2;
+           margin-right: 25px;
+       }
+       .column section:last-child{
+           background-color: crimson;
+       }
+       .container{
+           margin-bottom: 5px;
+           flex-direction: row
+       }
+
+       .column section{
+            background-color: rgb(51, 255, 0);
+            width: 80%;
+            height: 600px;
+            gap: 20px;
+
+         }
+        /*Aqui terminan las reglas para desktop*/
+      }
 </style>
 
 <body>
